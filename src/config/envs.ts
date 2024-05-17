@@ -1,19 +1,14 @@
-import { config } from 'dotenv';
+import 'dotenv/config';
 import * as joi from 'joi';
 interface EnVars {
   PORT: number;
-}
-
-if (process.env.NODE_ENV !== 'prod') {
-  const configFile = `.env.${process.env.NODE_ENV}`;
-  config({ path: configFile });
-} else {
-  config();
+  DATABASE_URL: string;
 }
 
 const envSchema = joi
   .object({
     PORT: joi.number().required(),
+    DATABASE_URL: joi.string().required(),
   })
   .unknown(true);
 
@@ -26,4 +21,5 @@ const enVars: EnVars = value;
 
 export const envs = {
   port: enVars.PORT,
+  databaseUrl: enVars.DATABASE_URL,
 };
