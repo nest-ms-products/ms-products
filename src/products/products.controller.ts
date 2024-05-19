@@ -27,7 +27,7 @@ export class ProductsController {
 
   @MessagePattern(ProductMessages.Update)
   update(
-    @Payload('id', ParseIntPipe)
+    @Payload()
     payload: {
       id: number;
       updateProductDto: UpdateProductDto;
