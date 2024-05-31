@@ -4,4 +4,5 @@ export const enum ProductMessages {
   Delete = 'DELETE_PRODUCT',
   FindAll = 'FIND_ALL_PRODUCTS',
   FindOne = 'FIND_ONE_PRODUCT',
+  ValidateProducts = 'VALIDATE_PRODUCTS',
 }
